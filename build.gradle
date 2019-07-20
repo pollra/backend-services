@@ -50,3 +50,17 @@ subprojects {
         annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
     }
 }
+
+project('module-app:admin') {
+    dependencies {
+        implementation project('module-common')
+        implementation project('module-domain')
+    }
+}
+
+project('module-app:api') {
+    dependencies {
+        implementation project('module-common')
+        implementation project('module-domain')
+    }
+}

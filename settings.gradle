@@ -4,3 +4,13 @@ rootProject.name = 'backend-services'
  * 도메인, 시스템에 전혀 의존하지 않는 순수 모듈 집합
  */
 include 'module-common'
+
+/**
+ * 도메인, 서비스(비즈니스), 영속화와 관련된 레이어
+ */
+include 'module-domain'
+
+/**
+ * API를 제공하는 애플리케이션, 관리자 애플리케이션 등
+ */
+include 'module-app:api', 'module-app:admin'
