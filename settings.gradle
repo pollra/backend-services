@@ -1,0 +1,6 @@
+rootProject.name = 'backend-services'
+
+/**
+ * 도메인, 시스템에 전혀 의존하지 않는 순수 모듈 집합
+ */
+include 'module-common'
