@@ -11,6 +11,13 @@ include 'module-common'
 include 'module-domain'
 
 /**
- * API를 제공하는 애플리케이션, 관리자 애플리케이션 등
+* API를 제공하는 애플리케이션, 관리자 애플리케이션 등
+*/
+include ':module-app:api'
+
+/**
+ * 시스템 모듈
+ * 국제화, 토큰 발급 등
  */
-include 'module-app:api', 'module-app:admin'
+include 'module-system:sys-i18n'
+

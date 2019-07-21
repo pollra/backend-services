@@ -31,36 +31,33 @@ subprojects {
         mavenCentral()
     }
 
-    task initSourceFolders {
-        sourceSets*.java.srcDirs*.each {
-            if( !it.exists() ) {
-                it.mkdirs()
-            }
-        }
-
-        sourceSets*.resources.srcDirs*.each {
-            if( !it.exists() ) {
-                it.mkdirs()
-            }
-        }
-    }
-
     dependencies {
         compileOnly("org.projectlombok:lombok:${lombokVersion}")
         annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+
+        // i18n 이슈랑 맞물려 고민중이긴 한데 일단 프로젝트에서 전체적으로 사용할 듯
+        compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
     }
 }
 
-project('module-app:admin') {
+/**
+ * API를 담당하는 애플리케이션 모듈
+ */
+project(':module-app:api') {
     dependencies {
-        implementation project('module-common')
-        implementation project('module-domain')
+        implementation project(':module-common')
+        implementation project(':module-domain')
+        implementation project(':module-system:sys-i18n')
     }
 }
 
-project('module-app:api') {
+/**
+ * 관리자 서비스
+ */
+project(':module-app:admin') {
     dependencies {
-        implementation project('module-common')
-        implementation project('module-domain')
+        implementation project(':module-common')
+        implementation project(':module-domain')
     }
 }
+

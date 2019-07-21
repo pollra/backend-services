@@ -6,6 +6,9 @@ jar {
     enabled = true
 }
 
+/**
+ * NOTE: 다른 모듈 임포트 금지
+ */
 dependencies {
 
 }
