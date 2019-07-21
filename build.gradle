@@ -50,14 +50,3 @@ project(':module-app:api') {
         implementation project(':module-system:sys-i18n')
     }
 }
-
-/**
- * 관리자 서비스
- */
-project(':module-app:admin') {
-    dependencies {
-        implementation project(':module-common')
-        implementation project(':module-domain')
-    }
-}
-
